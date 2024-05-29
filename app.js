@@ -8,6 +8,7 @@ if(process.env.NODE_ENV !="production"){
 
 const express = require("express");
 const app =express();
+let port =8080;
 const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -138,6 +139,6 @@ app.use((err,req,res,next)=>{
     //res.status(statusCode).send(message);
 });
 
-app.listen(8080,()=>{
+app.listen(port,()=>{
     console.log("server is listening to port 8080");
 });

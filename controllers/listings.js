@@ -1,7 +1,7 @@
 const Listing = require("../models/listing");
 require('dotenv').config();
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
-const MAP_TOKEN=pk.eyJ1IjoicHJhdnVrYWx5YW4iLCJhIjoiY2x3bTNqMnV0MGFtcTJqcWV2MWxnMnluaCJ9._hptcAuCDX6HuUYVFBkNEQ;
+const MAP_TOKEN='pk.eyJ1IjoicHJhdnVrYWx5YW4iLCJhIjoiY2x3bTNqMnV0MGFtcTJqcWV2MWxnMnluaCJ9._hptcAuCDX6HuUYVFBkNEQ';
 //const mapToken = process.env.MAP_TOKEN;
 const geocodingClient =mbxGeocoding({accessToken:MAP_TOKEN});
 

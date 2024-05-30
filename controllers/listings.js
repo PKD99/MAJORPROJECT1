@@ -27,7 +27,7 @@ module.exports.createListing = async(req,res,next)=>{
   
     //let {title,description,image,price,country,location} = req.body;
     // let listing = req.body.listing;
-    
+    console.log(accessToken);
     let response = await geocodingClient.forwardGeocode({
         query: req.body.listing.location,
         limit: 1,

@@ -7,7 +7,7 @@ body{
 .container {
     flex: 1 ;
 }
-.navbar{
+/*.navbar{
     height: 5rem;
     background-color: white;
 }
@@ -17,7 +17,7 @@ body{
 }
 .nav-link{
     color: #222222 !important;
-}
+}*/
 /* Footer*/
 .f-info-links a{
     text-decoration: none;
@@ -105,4 +105,215 @@ body{
 #map {
     height: 400px;
     width: 80vh;
+ }
+ 
+
+ /*Airbnb your home*/
+ @media only screen  and (max-width:320px){
+    .newlist {
+        font-size: 18px !important;
+
+    }
+    .form-label{
+        font-size: 15px;
+    }
+    .form-control{
+        font-size: 14px !important;
+    }
+ }
+ @media  (min-width:320px) and (max-width:4255px){
+    .row h3 {
+        font-size: 18px !important;
+    }
+    .form-label{
+        font-size: 15px;
+    }
+    .form-control{
+        font-size: 14px !important;
+    }
+ }
+
+
+ /*Sign up page*/
+
+ .heading{
+    font-size: 25px;
+ }
+ @media only screen  and (max-width:1440px){
+    .heading{
+        font-size: 25px;
+        margin-left: 250px !important;
+ }
+ }
+ @media only screen  and (max-width:1024px){
+    .heading{
+        font-size: 22px;
+        margin-left: 200px !important;
+ }
+ }
+
+ @media only screen   and (max-width:768px){
+    .heading{
+        font-size: 18px !important;
+       margin-left: 100px !important;
+    }
+    
+ }
+ @media only screen and (min-width:375px)  and (max-width:425px){
+    .signup-btn{
+        font-size: 10px !important;
+    }
+    .heading{
+        font-size: 15px !important;
+        margin-left: 60px !important;  
+    }
+ }
+
+ @media only screen  and (max-width:375px){
+    .heading{
+        font-size: 15px !important;
+        margin-left: 42% !important;  
+    }
+    .signup-btn{
+        font-size: 10px !important;
+    }
+ }
+
+ /*Login */
+ 
+ @media only screen  and (max-width:768px){
+    .login{
+        font-size: 20px;
+    }
+ }
+
+ @media only screen  and (max-width:375px){
+    .login{
+        font-size: 16px;
+    }
+    .login-btn{
+        font-size: 10px !important;
+    }
+ }
+
+
+ @media only screen  and (max-width:768px){
+    #map {
+        height: 180px !important;
+        width: 340px !important;
+        border-radius: 5px;
+     }
+ }
+
+ @media only screen  and (width <= 426px){
+    .show-img{
+        width: 250px !important;
+       
+    }
+    #map {
+        height: 150px !important;
+        width: 240px !important;
+        border-radius: 5px;
+       
+     }
+     .showcard{
+        margin-left: 75px !important;
+     }
+     .edit-btn{
+        width: 80px !important;
+     }
+     .comment{
+        margin-left: 75px !important;
+     }
+     .review-card{
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 250px !important;
+     }
+     .mapbox{
+        margin-left: 80px !important;
+     }
+    
+ }
+
+ @media only screen  and (width <= 376px){
+    .showcard{
+        margin-left: 50px !important;
+     }
+     .card-tt{
+        margin-left: 65px !important;
+     } 
+     .card-text {
+        font-size: 15px !important;
+     } 
+     .edit-btn{
+        width: 60px !important;
+        border-radius: 15px !important;
+     } 
+     .delete-btn{
+        width: 70px !important;
+        border-radius: 15px !important;
+     }
+     .comment-head{
+        font-size: 20px !important;
+     }
+    .review-card{
+        width: 200px !important;
+    }
+    .card-title{
+        font-size: 17px !important;
+    }
+    .mapbox{
+        margin-left: 60px !important;
+    }
+ }
+ @media only screen  and (width <= 321px){
+    .card-tt h3 {
+        font-size: 16px !important;
+    }
+    .card-tt{
+        margin-left: 45px !important;
+     } 
+     .show-img{
+        width: 200px !important;
+     }
+     .comment{
+        margin-left: 50px !important;
+     }
+     .mapbox{
+        margin-left: 35px !important;
+    }
+    .edit-img{
+        width: 200px !important;
+        margin-top: 15px !important;
+        border-radius: 7px !important;
+    }
+ }
+
+ @media only screen  and (width <= 426px){
+    .card-img-top{
+        width: 350px !important;
+        height: 260px !important;
+    }
+    .listing-link{
+        margin-left: 28px !important;
+    }
+ }
+ @media only screen  and (width <= 376px){
+    .card-img-top{
+        width: 310px !important;
+        height: 260px !important;
+    }
+    .listing-link{
+        margin-left: 30px !important;
+    }
+ }
+ @media only screen  and (width <= 321px){
+    .card-img-top{
+        width: 280px !important;
+        height: 200px !important;
+    }
+    .listing-link{
+        margin-left: 10px !important;
+    }
  }

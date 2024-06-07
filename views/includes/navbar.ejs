@@ -1,5 +1,5 @@
 <style>
-    .btn-search{
+   /* .btn-search{
       background-color: #fe424d;
       color:#fff;
       border-radius: 25px;
@@ -17,12 +17,205 @@
       border-radius: 25px;
       padding: 0.5rem 3rem;
       font-size: 1rem;
-    }
+    }*/
+    /*new*/
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+*{
+  padding: 0; 
+  margin: 0; 
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    border-bottom: 0.8px solid rgb(168, 161, 161);
+    background-color: white;
+  
+    padding: 23px 27px ;
+    color: black;
+}
+.all-listing{
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.all-listing a{
+  margin-right: 15px;
+  color: red;
+  font-weight: 400;
+  text-decoration: none;
+}
+.all-listing .navbar-brand{
+    font-size: 20px;
+}
+.all-listing .nav-link{
+  color: rgb(46, 40, 40);
+  font-weight: 600;
+}
+.search{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.search-form{
+    display: flex;
+    align-items: center;
+    
+}
+.search-form .form {
+  padding: 8px 50px;
+  border-radius: 18px;
+  border: 0.7px solid rgb(46, 40, 40);
+  font-size: 14px;
+  outline: none;
+  margin-right: 15px;
+} 
+.search-form .btn{
+  padding: 5px 15px;
+  border-radius: 22px;
+  border: none;
+  background-color: red;
+  color: white;
+}
+.fa-solid {
+  margin-right: 7px;
+}
+.nav-link{
+  text-decoration: none;
+  color: rgb(46, 40, 40);
+  margin-right: 15px;
+}
+.authentication{
+  display: flex;
+  flex-direction: row;
+}
+.btn-group{
+  display: none !important;
+}
+
+@media only screen and (max-width:900px){
+  .authentication{
+    display: none;
+  }
+  .btn-group{
+    display:block !important;
+  }
+  .search-form .form {
+    padding: 7px 45px;
+  border-radius: 20px;
+  border: 0.7px solid rgb(46, 40, 40);
+  font-size: 13px;
+  
+  }
+  .search-form .btn{
+    padding: 4px 13px;
+    border-radius: 20px;
+    
+  }
+  .nav-button{
+    width: 50px !important;
+    height: 32px !important;
+    margin-right: 20px;
+    padding: 5px 8px !important;
+    border-radius: 10px !important;
+    background-color: rgb(86, 82, 82) !important;
+  }
+  .btn-group .dp-link{
+   background-color: rgba(95, 92, 92,0.4);
+   margin-right: 15px;
+   margin-top: 15px !important;
+   padding: 10px;
+  }
+
+}
+
+@media only screen and (max-width:600px){
+  .navbar{
+    flex-wrap: wrap;
+  }
+  .search{
+    order: 4;
+    margin-top: 7px;
+  }
+  .search-form .form {
+    padding: 5px 40px;
+  border-radius: 20px;
+  border: 0.7px solid rgb(46, 40, 40);
+  font-size: 13px;
+  
+  }
+  .search-form .btn{
+    padding: 3px 12px;
+    border-radius: 20px;
+    
+  }
+}
+@media only screen and (max-width:375px){
+  .search-form .form {
+    padding: 5px 20px 5px 20px;
+  border-radius: 20px;
+  border: 0.7px solid rgb(46, 40, 40);
+  font-size: 13px;
+  margin-right: 5px;
+  
+  }
+  .search-form .btn{
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 15px ;
+    
+  }
+}
+
+  
 </style>
 
+<nav class="navbar sticky-top">
+  <div class="all-listing">
+      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+      <a class="nav-link" href="/listings">Explore</a>
+  </div>
+  <div class="search">
+      <form class="search-form">
+          <input class="form" type="search" placeholder="Search destinations" >
+          <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>
+  </div>
+ 
+ 
+  <div class="authentication">
+      <a class="nav-link" href="/listings/new" style="font-weight: 500;">Airbnb your home</a>
+      <% if(!currUser){ %>
+      <a class="nav-link "  href="/signup"><b>Sign up</b></a>
+      <a class="nav-link" href="/login"><b>Log in</b></a>
+      <%}%>
+      <% if(currUser){ %>
+      <a class="nav-link" href="/logout"  style="font-weight: 500;">Log out</a>
+      <%} %>
+  </div>
+  
+  <div class="btn-group ">
+      <button type="button" class="btn btn-secondary dropdown-toggle nav-button " data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end dp-link" >
+          <li> <a class="dropdown-item nav-link" href="/listings/new" style="font-weight: 500 !important;">Airbnb your home</a></li>
+          <li><a class="dropdown-item nav-link "  href="/signup"><b>Sign up</b></a></li>
+          <li><a class="dropdown-item nav-link" href="/login"><b>Log in</b></a></li>
+          <li><a class="dropdown-item nav-link" href="/logout"  style="font-weight: 500 !important;">Log out</a></li>
+      </ul>
+  </div>
+</nav>
 
-
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<!--<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
@@ -34,7 +227,8 @@
           <a class="nav-link" href="/listings">Explore</a>
           
         </div>
-        <div  class="navbar-nav ms-auto">
+        
+        <div  class="navbar-nav ms-auto media">
           <form class="d-flex" role="search">
             <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" >
             <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
@@ -53,4 +247,4 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->

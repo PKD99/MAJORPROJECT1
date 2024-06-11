@@ -1,0 +1,128 @@
+<% layout("/layouts/boilerplate") -%>
+
+<div id="filters">
+    <div class="filter">
+        <a href="/listings/trending" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </a>
+    </div>
+    <div class="filter" >
+        <a href="/listings/rooms" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/iconiccitys" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic cities</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/mountains" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/castles" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/amazingpools" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/camping" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/farms" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/arctic" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-regular fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/domes" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Domes</p>
+        </a>
+    </div>
+    <div class="filter">
+        <a href="/listings/boats" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p>Boats</p>
+        </a>
+    </div>
+    <div class="form-check form-switch " style="display: flex;flex-direction: row;">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" >
+        <label class="form-check-label " for="flexSwitchCheckDefault" style="flex-wrap: nowrap;" >Taxes</label>
+    </div>
+    
+</div>
+
+<div class="back" >
+    <h3 class="err-head">Search you have requested for does not exist</h3>
+    <a class="return" href="/listings">Back to Home</a>
+</div>
+
+
+
+<style>
+.back{
+    display: flex;
+   flex-direction: column;
+   align-items: center;
+    transition: margin-top 2s;
+}
+.back{
+    margin-top: 100px;
+}
+.err-head{
+    color: red;
+}
+.return{
+    text-decoration: none;
+    border: 1px solid rgb(128, 230, 128);
+    padding: 7px 12px;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+}
+@media only screen and (max-width:768px){
+    .err-head{
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width:500px){
+    .err-head{
+        font-size: 15px;
+    }
+    .return{
+        font-size: 14px;
+        padding: 5px 9px;
+    }
+}
+@media only screen and (max-width:376px){
+    .err-head{
+        font-size: 12px;
+    }
+    .return{
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+</style>

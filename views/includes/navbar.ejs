@@ -184,9 +184,13 @@ nav {
       <a class="nav-link" href="/listings">Explore</a>
   </div>
   <div class="search">
-      <form class="search-form">
-          <input class="form" type="search" placeholder="Search destinations" >
+     <!-- <form method="GET" action="/listings/search/:q" class="search-form">
+          <input name="q" class="form" type="search" placeholder="Search destinations" >
           <button class="btn " type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </form>-->
+      <form  id="search-form" class="search-form" onsubmit="handleSearch(event)">
+        <input name="q" id="search-input" class="form" type="search" placeholder="Search destinations">
+        <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
   </div>
  
@@ -215,36 +219,33 @@ nav {
   </div>
 </nav>
 
-<!--<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          
-          <a class="nav-link" href="/listings">Explore</a>
-          
-        </div>
-        
-        <div  class="navbar-nav ms-auto media">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" >
-            <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-          </form>
-        </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">Airbnb your home</a>
-          <% if(!currUser){ %>
-            <a class="nav-link "  href="/signup"><b>Sign up</b></a>
-            <a class="nav-link" href="/login"><b>Log in</b></a>
-          <%}%>
-          <% if(currUser){ %>
-            <a class="nav-link" href="/logout">Log out</a>
-          <%} %>
-          
-        </div>
-      </div>
-    </div>
-  </nav>-->
+
+
+<script>
+  const form = document.getElementById('search-form');
+
+  async function handleSearch(event) {
+      //event.preventDefault();
+      
+      const query = document.getElementById('search-input').value;
+      const url = `/listings/search/${encodeURIComponent(query)}`;
+     form.action=url;
+      console.log(url);
+      
+        const response = await fetch(url);
+        console.log(response);
+        if (!response.ok) {
+          const errorDetails = await response.json();
+          throw new Error(`Network response was not ok: ${response.statusText} - ${errorDetails.error}`);
+        }
+        const results = await response.json();
+        console.log(results);
+        displayResults(results);
+       
+      
+    }
+
+    
+  
+</script>
+

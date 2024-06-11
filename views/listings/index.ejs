@@ -1,111 +1,71 @@
 <% layout("/layouts/boilerplate") -%>
 
-<style>
-    #filters{
-        display: flex;
-      
-        align-items: center;
-        background-color: white;
-    }
-    .filter{
-        text-align: center;
-        margin-right: 2rem;
-        margin-top: 2rem;
-        opacity: 0.7;
-    }
-    .filter:hover{
-        opacity: 1;
-        cursor: pointer;
-    }
-    .filter p{
-        font-size: 0.8rem;
-    }
-    .tax-info{
-       display:none; 
-    }
-    /*.tax-toggle{
-       border: 1px solid black;
-       border-radius: 1rem;
-       height:3.25rem;
-       padding: 8px 15px !important; 
-       margin-left: 170px;
-       display:flex;
-       flex-direction: row;
-       align-items: center;
-       justify-content: center;
-       font-size: 15px;
-    }
-    .check-box{
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }*/
-    .form-check{
-      border: 1px solid rgb(116, 113, 113) !important;
-      border-radius: 10px;
-      padding: 7px 18px 7px 40px !important;
-      margin-left: 80px;
-      height: 40px !important;
-    }
-    @media only screen and (max-width:1024px){
-        #filters{
-            overflow-x: scroll;
-        }
-        .form-check{
-            display: flex !important;
-            flex-direction: row !important;
-            margin-left: 20px;
-        }
-        .filter{
-            margin-top: 1.5rem;
-        }
-    }
-    
-</style>
 <div id="filters">
     <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
+        <a href="/listings/trending" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </a>
+    </div>
+    <div class="filter" >
+        <a href="/listings/rooms" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
+        <a href="/listings/iconiccitys" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic cities</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Iconic cities</p>
+        <a href="/listings/mountains" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-mountain"></i></div>
-        <p>Mountains</p>
+        <a href="/listings/castles" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-brands fa-fort-awesome"></i></div>
-        <p>Castles</p>
+        <a href="/listings/amazingpools" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-person-swimming"></i></div>
-        <p>Amazing Pools</p>
+        <a href="/listings/camping" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-campground"></i></div>
-        <p>Camping</p>
+        <a href="/listings/farms" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-cow"></i></div>
-        <p>Farms</p>
+        <a href="/listings/arctic" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-regular fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-regular fa-snowflake"></i></div>
-        <p>Arctic</p>
+        <a href="/listings/domes" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Domes</p>
+        </a>
     </div>
     <div class="filter">
-        <div><i class="fa-solid fa-igloo"></i></div>
-        <p>Domes</p>
-    </div>
-    <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>Boats</p>
+        <a href="/listings/boats" style="text-decoration: none; color: rgb(53, 57, 57);">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p>Boats</p>
+        </a>
     </div>
     <div class="form-check form-switch " style="display: flex;flex-direction: row;">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" >

@@ -16,8 +16,20 @@ router
    .route("/")
    .get(wrapAsync(listingController.index ))
    .post(isLoggedIn,upload.single('listing[image]'),validateListing,wrapAsync(listingController.createListing));
-   
 
+router.route("/search/:q").get(wrapAsync(listingController.search));
+   
+router.route("/trending").get(wrapAsync(listingController.trending));
+router.route("/rooms").get(wrapAsync(listingController.rooms));
+router.route("/iconiccitys").get(wrapAsync(listingController.iconiccities));
+router.route("/mountains").get(wrapAsync(listingController.mountains));
+router.route("/castles").get(wrapAsync(listingController.castles));
+router.route("/amazingpools").get(wrapAsync(listingController.amazingpools));
+router.route("/camping").get(wrapAsync(listingController.camping));
+router.route("/farms").get(wrapAsync(listingController.farms));
+router.route("/arctic").get(wrapAsync(listingController.arctic));
+router.route("/domes").get(wrapAsync(listingController.domes));
+router.route("/boats").get(wrapAsync(listingController.boats));
 //New Route
 router.get("/new",isLoggedIn,listingController.renderNewForm);
 

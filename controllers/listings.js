@@ -82,3 +82,87 @@ module.exports.destroyListing = async(req,res)=>{
     req.flash("success","Listing Deleted!");
     res.redirect("/listings");
 }
+
+module.exports.search = async(req,res)=>{
+    const query = req.params.q;
+    try {
+      const results = await Listing.find({
+        "$or": [
+          { "title": { $regex: query, $options: "i" } },
+          { "country": { $regex: query, $options: "i" } },
+          { "location": { $regex: query, $options: "i" } },
+          { "speciality": { $regex: query, $options: "i" } }
+        ]
+      });
+      if(results.length===0){
+        res.render("listings/error.ejs")
+       
+      }
+      
+      console.log(results); // Log the results
+      res.render("listings/search.ejs", { data: results }); // Correct path to the EJS file
+    } catch (err) {
+      console.error('Error during database query:', err); // Log the error with more details
+      res.status(500).send({ error: 'Internal Server Error', details: err.message });
+    }
+  
+}
+
+module.exports.trending = async(req,res)=>{
+    const trending = await Listing.find({speciality:'Trending'});
+    console.log(trending);
+    res.render("listings/trending.ejs",{trending});
+}
+
+module.exports.rooms =async(req,res)=>{
+    const rooms = await Listing.find({speciality:'Rooms'});
+    res.render("listings/rooms.ejs",{rooms});
+}
+
+module.exports.iconiccities =async(req,res)=>{
+    const cities = await Listing.find({speciality:'Iconic cities'});
+    console.log(cities);
+    res.render("listings/city.ejs",{cities});
+}
+module.exports.mountains =async(req,res)=>{
+    const mountains = await Listing.find({speciality:'Mountains'});
+   
+    res.render("listings/mountain.ejs",{mountains});
+}
+
+module.exports.castles =async(req,res)=>{
+    const castles = await Listing.find({speciality:'Castles'});
+   
+    res.render("listings/castle.ejs",{castles});
+}
+module.exports.amazingpools =async(req,res)=>{
+    const pools = await Listing.find({speciality:'Amazing Pools'});
+   
+    res.render("listings/pool.ejs",{pools});
+}
+module.exports.camping =async(req,res)=>{
+    const camping = await Listing.find({speciality:'Camping'});
+   
+    res.render("listings/camp.ejs",{camping});
+}
+module.exports.farms =async(req,res)=>{
+    const farms = await Listing.find({speciality:'Farms'});
+   
+    res.render("listings/farm.ejs",{farms});
+}
+module.exports.arctic =async(req,res)=>{
+    const arctic = await Listing.find({speciality:'Arctic'});
+   
+    res.render("listings/arctic.ejs",{arctic});
+}
+module.exports.domes =async(req,res)=>{
+    const domes = await Listing.find({speciality:'Domes'});
+   
+    res.render("listings/dome.ejs",{domes});
+}
+module.exports.boats =async(req,res)=>{
+    const boats = await Listing.find({speciality:'Boats'});
+   
+    res.render("listings/boat.ejs",{boats});
+}
+

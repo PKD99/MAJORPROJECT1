@@ -39,6 +39,25 @@
             <input name="listing[location]" value="<%=listing.location%>"  type="text" class="form-control" required/>
             <div class="invalid-feedback">Location should be valid</div>
         </div>
+        <div class="mb-3" style="margin-bottom: 100px !important;">
+            <label style="font-size: large; display: inline-block;">Speciality:</label>
+            <div class="custom-select" style="width:150px;">
+                <select name="listing[speciality]" required>
+                    <option value="0">Speciality:</option>
+                    <option value="Iconic cities">Iconic cities</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Castles">Castles</option>
+                    <option value="Amazing Pools">Amazing Pools</option>
+                    <option value="Camping">Camping</option>
+                    <option value="Farms">Farms</option>
+                    <option value="Arctic">Arctic</option>
+                    <option value="Domes">Domes</option>
+                    <option value="Boats">Boats</option>
+                
+                </select>
+            </div>
+    
+        </div>
         <button class="btn btn-dark mt-3 edit-btn">Edit</button>
         <br><br>
     </form>

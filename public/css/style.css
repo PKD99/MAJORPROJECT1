@@ -107,6 +107,183 @@ body{
     width: 80vh;
  }
  
+/*scroll*/
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    display: inline-block;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+    background-color: rgb(229, 237, 243);
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  .select-selected-bottom-rounded {
+    border-radius: 10px 10px 10px 10px;
+  }
+  
+  .select-selected-bottom-square {
+    border-radius: 10px 10px 0px 0px;
+  }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 45%;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 25%;
+  }
+  
+  /*set the styling and height for the list when the select box is open (active), the overflow-y property controls the scrolling:*/
+  .select-items{
+    border-radius: 0px 0px 10px 10px;
+    height: 110px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: rgb(211, 244, 222);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    color: #1c1c1c;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  }
+  
+  /* scrollbar width */
+  .select-items::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* scrollbar track */
+  .select-items::-webkit-scrollbar-track {
+    background:  #b6e6d9;
+    border-radius: 0px 0px 10px 0px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  }
+   
+  /* scrollbar handle */
+  .select-items::-webkit-scrollbar-thumb {
+    background: #c1e88a;
+    border-radius: 10px; /* optional rounded handle */
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-image: -webkit-linear-gradient(45deg,
+                                                rgba(255, 255, 255, .2) 25%,
+                                                transparent 25%,
+                                                transparent 50%,
+                                                rgba(255, 255, 255, .2) 50%,
+                                                rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%,
+                                                transparent);
+  }
+  
+  /* scrollbar handle on hover */
+  .select-items::-webkit-scrollbar-thumb:hover {
+    background: #6cb6ff;
+    background-image: -webkit-linear-gradient(45deg,
+                                                rgba(255, 255, 255, .2) 25%,
+                                                transparent 25%,
+                                                transparent 50%,
+                                                rgba(255, 255, 255, .2) 50%,
+                                                rgba(255, 255, 255, .2) 75%,
+                                                transparent 75%,
+                                                transparent);
+  }
+
+  
+  #filters{
+    display: flex;
+  
+    align-items: center;
+    background-color: white;
+}
+.filter{
+    text-align: center;
+   
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.6;
+}
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.filter p{
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+.tax-info{
+   display:none; 
+}
+/*.tax-toggle{
+   border: 1px solid black;
+   border-radius: 1rem;
+   height:3.25rem;
+   padding: 8px 15px !important; 
+   margin-left: 170px;
+   display:flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+   font-size: 15px;
+}
+.check-box{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}*/
+.form-check{
+  border: 1px solid rgb(116, 113, 113) !important;
+  border-radius: 10px;
+  padding: 7px 18px 7px 40px !important;
+  margin-left: 80px;
+  height: 40px !important;
+}
+@media only screen and (max-width:1024px){
+    #filters{
+        overflow-x: scroll;
+    }
+    .form-check{
+        display: flex !important;
+        flex-direction: row !important;
+        margin-left: 20px;
+    }
+    .filter{
+        margin-top: 1.5rem;
+    }
+}
 
  /*Airbnb your home*/
  @media only screen  and (max-width:320px){
